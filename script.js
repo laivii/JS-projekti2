@@ -1,4 +1,4 @@
-document.getElementById("loadDoc").addEventListener("click", loadDoc);
+document.getElementById("calculate").addEventListener("click", loadDoc);
 
 function loadDoc(name1, name2) {
 
@@ -11,7 +11,7 @@ function loadDoc(name1, name2) {
         var responseObj = JSON.parse(this.responseText); //Parsing the json we get as a response, so we can use it
         console.log(responseObj); //Console log so we can look what we get
 
-        document.getElementById("infoHere").innerHTML = this.responseText; //This one is atm useless, but this one writes the thing into the site
+        document.getElementById("person1").innerHTML = this.responseText; //This one is atm useless, but this one writes the thing into the site
     }
 
     //Here we are defining the names to be used in the calculation
@@ -22,4 +22,6 @@ function loadDoc(name1, name2) {
     xhttp.setRequestHeader("X-RapidAPI-Key", "5784b570e7msh46bcabeb3618464p179590jsn272f2a0f6e83"); //here we tell our API key
     xhttp.setRequestHeader("X-RapidAPI-Host", "love-calculator.p.rapidapi.com"); //Here is the host
     xhttp.send(); //Lastly we send the request
+
+    return responseObj;
 }
