@@ -1,27 +1,96 @@
-document.getElementById("calculate").addEventListener("click", loadDoc);
+document.getElementById("getData").addEventListener("click", loadDoc);
 
-function loadDoc(name1, name2) {
+/*class Movie {
+    constructor(otsikko) {
+        this.otsikko = otsikko;
+    }
+    
+    createDiv() {
+        let newdiv = createElement("div");
+        let hone = createElement("h1")
 
-    var hetkellinen = name1 + name2; //Tallennettu myöhempää käyttöä varten (nöihin siis tulee käytettävät nimet talteen) poistetaan myöhemmin kun saadaan nimet parametreina
+        hone.innerHTML(this.otsikko)
+        document.getElementById()
+    }
+}*/
 
-    const xhttp = new XMLHttpRequest(); //Making a new XML request
+function loadDoc() {
+    var xhr = new XMLHttpRequest;
 
-    //When getting a response this function does the things we want it to do
-    xhttp.onload = function() {
-        var responseObj = JSON.parse(this.responseText); //Parsing the json we get as a response, so we can use it
-        console.log(responseObj); //Console log so we can look what we get
+    var location = getLocation();
+    var date = todaysDate();
 
-        document.getElementById("results").innerHTML = this.responseText; //This one is atm useless, but this one writes the thing into the site
+    xhr.open("GET", "https://www.finnkino.fi/xml/Schedule/?area=" + location + "&dt=" + date, true);
+    xhr.send();
+
+    xhr.onload = function(){
+        //GEtting the response
+        var vastaus = xhr.responseXML;
+
+        //Searching specific movies
+        var movies = vastaus.getElementsByTagName("Show");
+
+        for(var i = 0; i < movies.length; i++){
+            var movie = movies[i];
+            //Getting the title
+            var title = movie.getElementsByTagName("Title")[0];
+            var otsikko = title.innerHTML; //Getting the title as text only
+
+            //Searching for the movie posters
+            var images = movie.getElementsByTagName("Images")[0];
+            //Getting the right sized poster
+            var poster = images.getElementsByTagName("EventMediumImagePortrait")[0];
+            var portrait = poster.innerHTML; //Getting the text only (the url inside that tagname)
+
+            /*let new_movie = new Movie(otsikko);
+            new_movie.createDiv();
+            console.log(new_movie);*/
+
+            document.write(`
+                <div id='movie[i]'>
+                    <h1> ${otsikko} </h1>
+                    <img src='${portrait}'>
+                </div>
+            `);
+        }
+    }
+}
+
+function getLocation(){
+    var select = document.getElementById('location');
+    var value = select.options[select.selectedIndex].value;
+    var id = 0;
+
+    switch (parseInt(value)) {
+        case 1:
+            id = 1002;
+            break;
+        case 2:
+            id = 1012;
+            break;
+        case 3:
+            id = 1021;
+            break;
     }
 
-    //Here we are defining the names to be used in the calculation
-    sname = "V"; //name1; //First name to be used in the calculatio
-    fname = "V"; //name2; //Second name to be used in the calculation
+    console.log(id);
 
-    xhttp.open("GET", "https://love-calculator.p.rapidapi.com/getPercentage?sname="+sname+"&fname="+fname, true); //the site we are requesting
-    xhttp.setRequestHeader("X-RapidAPI-Key", "5784b570e7msh46bcabeb3618464p179590jsn272f2a0f6e83"); //here we tell our API key
-    xhttp.setRequestHeader("X-RapidAPI-Host", "love-calculator.p.rapidapi.com"); //Here is the host
-    xhttp.send(); //Lastly we send the request
+    return id;
+}
 
-    return responseObj;
+function todaysDate(){
+    //Kokoaa päivän muotoa DD.MM.YYYY
+
+    const d = new Date();
+
+    var päivä = d.getDate();
+    var kuukausi = d.getMonth();
+    var vuosi = d.getFullYear();
+
+    kuukausi = parseInt(kuukausi) + 1;
+
+    var päiväys = päivä + "." + kuukausi + "." + vuosi;
+    console.log(päiväys);
+
+    return päiväys;
 }
