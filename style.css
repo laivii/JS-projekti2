@@ -92,13 +92,14 @@ a:hover {
 }
 
 .grid-container {
+    justify-content: center;
     text-align: center;
     color: #E6E6E6;
     padding: 1em;
     line-height: 1em;
-    align-items: center;
     display: grid;
     grid-template-columns: repeat(3, 24em);
+    grid-template-rows: min-content(20em);
 }
 
 .grid-item {
