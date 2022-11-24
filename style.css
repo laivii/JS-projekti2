@@ -8,20 +8,60 @@ body {
 }
 
 h1 {
-    color: yellow;
+    background-color: yellow;
+    color: black;
+    padding: 3%;
+    font-size: 5rem;
+}
+
+h4 {
+    height: 30px;
+    text-align: left;
+}
+
+#select {
+    margin: 1%;
+    margin-bottom: 3%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.col1 {
+    text-align: center;
+}
+
+.col2 {
+    text-align: left;
 }
 
 .grid-container {
     display: grid ;
+    text-align: center;
     grid-template-columns: repeat(3, auto);
+    grid-gap: 0;
 }
 
 .grid-item {
     margin-bottom: 20px;
+    width: 25em;
 }
 
-@media all and (max-width: 600px){
+@media all and (max-width: 1200px){
+    body {
+        width: 80%;
+    }
+    
     .grid-container {
         grid-template-columns: auto auto;
+    }
+
+    .col1, .col2 {
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 900px){
+    .grid-container {
+        grid-template-columns: auto;
     }
 }

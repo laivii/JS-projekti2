@@ -105,36 +105,44 @@ function displayMovies(i, otsikko, portrait, kieli, alku, laji, kesto, liput){
 
     var show = document.createElement("div");
         show.id = "movie"+i;
-        show.className = "grid-item";
+        show.className = "grid-item row";
     container.appendChild(show);
 
     var title = document.createElement( "h4");
         title.innerHTML = otsikko;
     show.appendChild(title);
 
+    var col1 = document.createElement("div");
+        col1.className = "col-sm-4 col1";
+    show.appendChild(col1);
+
+    var col2 = document.createElement("div");
+        col2.className = "col-sm-8 col2";
+    show.appendChild(col2);
+
     var image = document.createElement("img");
         image.src = portrait;
-    show.appendChild(image);
-
-    var length = document.createElement("p");
-        length.innerHTML = "Kesto: " + kesto + " min";
-    show.appendChild(length);
-
-    var language = document.createElement("p");
-        language.innerHTML = "Kieli: " + kieli;
-    show.appendChild(language);
+    col1.appendChild(image);
 
     var startingTime = document.createElement("p");
         startingTime.innerHTML = "Aloitusaika: "+ alku; 
-    show.appendChild(startingTime);
+    col2.appendChild(startingTime);
+
+    var length = document.createElement("p");
+        length.innerHTML = "Kesto: " + kesto + " min";
+    col2.appendChild(length);
+
+    var language = document.createElement("p");
+        language.innerHTML = "Kieli: " + kieli;
+    col2.appendChild(language);
 
     var genre = document.createElement("p");
         genre.innerHTML = "Tyylilaji: " + laji;
-    show.appendChild(genre);
+    col2.appendChild(genre);
 
     var tickets = document.createElement("a");
         tickets.href = liput;
         tickets.innerHTML = "Liput";
         tickets.target = "_blank";
-    show.appendChild(tickets);
+    col2.appendChild(tickets);
 }
