@@ -176,6 +176,16 @@ a:hover {
         width: 100%;
     }
 
+    h1 {
+        font-size: 2rem;
+    }
+
+    #select {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     #location, #whatDay, #getData {
         width: 10em;
         margin: 2%;
