@@ -109,7 +109,7 @@ function displayMovies(i, otsikko, portrait, kieli, alku, laji, kesto, liput){
     container.appendChild(show);
 
     var col12 = document.createElement("div");
-        col12.className = "col-sm-4 col1";
+        col12.className = "col-sm-12 col1";
     show.appendChild(col12);
 
     var title = document.createElement("h5");
