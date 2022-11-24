@@ -99,7 +99,7 @@ a:hover {
     line-height: 1em;
     display: grid;
     grid-template-columns: repeat(3, 24em);
-    grid-template-rows: min-content(20em);
+    grid-template-rows: max-content;
 }
 
 .grid-item {
