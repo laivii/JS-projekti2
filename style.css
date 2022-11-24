@@ -61,6 +61,7 @@ p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: rgba(92, 92, 92, 0.56) 0px 10px 30px 4px;
 }
 
 #getData:hover {
@@ -77,6 +78,7 @@ p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: rgba(92, 92, 92, 0.56) 0px 10px 30px 4px;
 }
 
 #location:hover {
