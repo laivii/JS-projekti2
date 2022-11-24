@@ -3,6 +3,12 @@ body {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    background-color: black;
+    color: aliceblue;
+}
+
+h1 {
+    color: yellow;
 }
 
 .grid-container {
@@ -12,4 +18,10 @@ body {
 
 .grid-item {
     margin-bottom: 20px;
+}
+
+@media all and (max-width: 600px){
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
 }
