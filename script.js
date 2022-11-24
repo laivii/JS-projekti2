@@ -48,17 +48,31 @@ function getLocation(){
 }
 
 function todaysDate(){
-    //Kokoaa päivän muotoa DD.MM.YYYY
+    var select = document.getElementById('whatDay');
+    var value = select.options[select.selectedIndex].value;
 
+    //Kokoaa päivän muotoa DD.MM.YYYY
     const d = new Date();
 
     var päivä = d.getDate();
     var kuukausi = d.getMonth();
     var vuosi = d.getFullYear();
+    var päiväys;
 
     kuukausi = parseInt(kuukausi) + 1;
 
-    var päiväys = päivä + "." + kuukausi + "." + vuosi;
+    switch(parseInt(value)){
+        case 1:
+            päiväys = päivä + "." + kuukausi + "." + vuosi;
+            break;
+        case 2:
+            päiväys = parseInt(päivä)+1 + "." + kuukausi + "." + vuosi;
+            break;
+        case 3:
+            päiväys = parseInt(päivä)+2 + "." + kuukausi + "." + vuosi;
+            break;
+    }
+
     console.log(päiväys);
 
     document.getElementById("whatDate").innerHTML = "Näytökset: " + päiväys;
