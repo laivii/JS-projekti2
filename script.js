@@ -143,6 +143,7 @@ function displayMovies(i, otsikko, portrait, kieli, alku, laji, kesto, liput){
 
     var language = document.createElement("p");
         language.innerHTML = "Kieli: " + kieli;
+        language.className = "kieli";
     col2.appendChild(language);
 
     var genre = document.createElement("p");

@@ -27,6 +27,10 @@ h5 {
     text-align: left;
 }
 
+.kieli {
+    text-transform: capitalize;
+}
+
 .hide {
     display: none;
 }
