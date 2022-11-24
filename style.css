@@ -33,6 +33,7 @@ h5 {
     display: inline-block;
     vertical-align: middle;
 }
+
 #getData {
     letter-spacing: 0.05em;
     background-color: #F0F0F0;
@@ -97,14 +98,13 @@ a:hover {
     line-height: 1em;
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 24em);
 }
 
 .grid-item {
     background-color: #242424;
     margin: 1em;
     padding: 1em;
-    width: 25em;
     text-align: center;
     border-style: none;
     border-radius: 15px;
