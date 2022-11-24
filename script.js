@@ -59,6 +59,9 @@ function todaysDate(){
     var päiväys = päivä + "." + kuukausi + "." + vuosi;
     console.log(päiväys);
 
+    document.getElementById("whatDate").innerHTML = "Elokuvat tänään: " + päiväys;
+    document.getElementById("whatDate").className = "";
+
     return päiväys;
 }
 
