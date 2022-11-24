@@ -146,7 +146,7 @@ function displayMovies(i, otsikko, portrait, kieli, alku, laji, kesto, liput){
 
     var tickets = document.createElement("a");
         tickets.href = liput;
-        tickets.innerHTML = "Liput";
+        tickets.innerHTML = "LIPUT";
         tickets.target = "_blank";
     col2.appendChild(tickets);
 }
