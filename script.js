@@ -108,6 +108,10 @@ function displayMovies(i, otsikko, portrait, kieli, alku, laji, kesto, liput){
         show.className = "grid-item row";
     container.appendChild(show);
 
+    var col12 = document.createElement("div");
+        col12.className = "col-sm-4 col1";
+    show.appendChild(col12);
+
     var title = document.createElement("h5");
         title.innerHTML = otsikko;
     col12.appendChild(title);
