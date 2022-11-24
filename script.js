@@ -2,6 +2,8 @@ var vastaus;
 
 document.getElementById("getData").addEventListener("click", loadDoc);
 
+document.getElementById("location").addEventListener("keypress", submitWithEnter);
+
 function loadDoc() {
     var xhr = new XMLHttpRequest;
 
@@ -152,4 +154,14 @@ function displayMovies(i, otsikko, portrait, kieli, alku, laji, kesto, liput){
         tickets.innerHTML = "LIPUT";
         tickets.target = "_blank";
     col2.appendChild(tickets);
+}
+
+function submitWithEnter(enter){
+    //If the key is not "Enter" then the code will not process
+    if(enter.key != "Enter"){
+        return;
+    }
+
+    enter.preventDefault();
+    document.getElementById("getData").click(); //Simulates a mouse click on "Submit"-button
 }
