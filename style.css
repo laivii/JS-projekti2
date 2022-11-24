@@ -107,30 +107,32 @@ p {
     margin-top: 1em;
     font-size: 25px;
 }
+
 .col1 {
     text-align: center;
 }
 
 .col2 {
     text-align: left;
+    padding: 0 0 5px 20px ;
 }
 
 a {
     font-family: 'Quicksand', 'sans-serif';
     font-size: 15px;
     align-items: center;
-    color: yellow;
+    color: #fec704;
     margin-top: 5px;
     text-decoration: none;
     letter-spacing: 0.10em;
     padding: 0.25em 1em 0.25em 1em;
-    border: 1px solid yellow;
+    border: 1px solid #fec704;
 }
 
 a:hover {
     padding: 0.25em 1em 0.25em 1em;
     font-weight: bold;
-    background-color: yellow;
+    background-color: #fec704;
     color: black;
 }
 
@@ -161,16 +163,12 @@ a:hover {
     }
     
     .grid-container {
-        grid-template-columns: auto auto;
-    }
-
-    .col1, .col2 {
-        text-align: center;
+        grid-template-columns: 24em 24em;
     }
 }
 
 @media all and (max-width: 900px){
     .grid-container {
-        grid-template-columns: auto;
+        grid-template-columns: 24em;
     }
 }
