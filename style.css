@@ -20,7 +20,7 @@ h1 {
     text-align: center;
 }
 
-h4 {
+h5 {
     font-family: 'DM Serif Display', serif;
     letter-spacing: 0.1em;
     height: 30px;
@@ -53,8 +53,13 @@ h4 {
 }
 
 .grid-item {
-    margin-bottom: 20px;
+    background-color: #242424;
+    padding: 1em;
     width: 25em;
+    text-align: center;
+    border-style: none;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 @media all and (max-width: 1200px){
