@@ -98,6 +98,7 @@ a:hover {
     align-items: center;
     display: grid;
     grid-template-columns: repeat(3, auto);
+    max-width: 100%;
 }
 
 .grid-item {
