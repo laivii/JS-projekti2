@@ -95,7 +95,7 @@ function getInfo(){
         //Searching for the movie posters
         var images = movie.getElementsByTagName("Images")[0];
         //Getting the right sized poster
-        var poster = images.getElementsByTagName("EventSmallImagePortrait")[0];
+        var poster = images.getElementsByTagName("EventMediumImagePortrait")[0];
         var portrait = poster.innerHTML; //Getting the text only (the url inside that tagname)
 
         var language = movie.getElementsByTagName("SpokenLanguage")[0];

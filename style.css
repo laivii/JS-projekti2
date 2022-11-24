@@ -159,6 +159,12 @@ a:hover {
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
+kun käytössä kuva koko Medium
+img {
+    width: 130%;
+    height: auto;
+}
+
 @media all and (max-width: 1200px){
     body {
         width: 80%;
@@ -178,6 +184,12 @@ a:hover {
 
     h1 {
         font-size: 2rem;
+    }
+
+    img {
+        width: 80%;
+        height: auto;
+        margin-bottom: 5px;
     }
 
     #select {
