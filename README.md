@@ -15,15 +15,9 @@ The assingment was to build an AJAX-application using REST API. We used Finnkino
 It should be able to do the following:
 
 * Implement a web page, where the user can select a theater from a list
-* * We did this with the movie theaters in Helsinki (Itis, Kinopalatsi, Tennispalatsi and Maxim). You can also select a day between today, tomorrow, and the day after tomorrow.
+   * We did this with the movie theaters in Helsinki (Itis, Kinopalatsi, Tennispalatsi and Maxim). You can also select a day between today, tomorrow, and the day after tomorrow.
 * The page then shows the pictures and info of the ongoing movies in the selected theatre
-* * Yes it does.
-* Display some other info as well, such as showtimes etc.
-* * Our webpage displays all the movies from a certain day. It includes the movie name, when the movie starts and what is the duration, the language of the movie, which genre it represents, and a straight link to buy tickets. 
-* Create nice layout and style for the page
-* * For this one we used grid-content and bootstrap in each grid-item. 
-* Extra points will be given for input field with custom search string. 
-* * Unfortunately we didn't have time to build this feature.
+* Our webpage displays all the movies from a certain day. It includes the movie name, when the movie starts and what is the duration, the language of the movie, which genre it represents, and a straight link to buy tickets. 
 
 ### View with;
 * Netlify: https://js-projekti2-vl-ek.netlify.app/
