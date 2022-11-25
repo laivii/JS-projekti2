@@ -10,7 +10,9 @@
 
 This is a project for our Javascript course. 
 
-The assingment was to build a REST API by using AJAX and XML-file. It should be able to do the following:
+The assingment was to build an AJAX-application using REST API. We used Finnkino's open source api // https://www.finnkino.fi/xml.
+
+It should be able to do the following:
 
 * Implement a web page, where the user can select a theater from a list
 * * We did this with the theaters in Helsinki (Itis, Kinopalatsi, Tennispalatsi and Maxim)
